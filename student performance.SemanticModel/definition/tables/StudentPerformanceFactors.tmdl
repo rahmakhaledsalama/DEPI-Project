@@ -1,6 +1,9 @@
 table StudentPerformanceFactors
 	lineageTag: 4b70661b-1710-4282-ae8c-3e2e92e7b50e
 
+	measure test = "This measure is for testing"
+		lineageTag: d7986051-c9bc-4800-9de4-711e9dde1a44
+
 	column Hours_Studied
 		dataType: int64
 		formatString: 0
