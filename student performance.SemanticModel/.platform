@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "student performance"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2dba523c-e94e-4139-98a2-34b6d96e2660"
+  }
+}

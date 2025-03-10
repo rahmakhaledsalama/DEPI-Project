@@ -1,0 +1,259 @@
+table StudentPerformanceFactors
+	lineageTag: 4b70661b-1710-4282-ae8c-3e2e92e7b50e
+
+	column Hours_Studied
+		dataType: int64
+		formatString: 0
+		lineageTag: 4f1fbefc-109e-4e62-a410-99e9e1614c8a
+		summarizeBy: sum
+		sourceColumn: Hours_Studied
+
+		annotation SummarizationSetBy = Automatic
+
+	column Attendance
+		dataType: int64
+		formatString: 0
+		lineageTag: 2c45d7ae-005f-4a71-bb96-62e8b210f353
+		summarizeBy: sum
+		sourceColumn: Attendance
+
+		annotation SummarizationSetBy = Automatic
+
+	column Parental_Involvement
+		dataType: string
+		lineageTag: 0e44464f-b139-44e0-9081-ff52726e9ea9
+		summarizeBy: none
+		sourceColumn: Parental_Involvement
+
+		annotation SummarizationSetBy = Automatic
+
+	column Access_to_Resources
+		dataType: string
+		lineageTag: 02259778-f750-4059-961d-09f026f63845
+		summarizeBy: none
+		sourceColumn: Access_to_Resources
+
+		annotation SummarizationSetBy = Automatic
+
+	column Extracurricular_Activities
+		dataType: string
+		lineageTag: 6112e172-a9a6-4fbd-90d5-936aea128a3c
+		summarizeBy: none
+		sourceColumn: Extracurricular_Activities
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sleep_Hours
+		dataType: int64
+		formatString: 0
+		lineageTag: 4cdf061e-2eef-4a29-a3a7-ebe85f4b44db
+		summarizeBy: sum
+		sourceColumn: Sleep_Hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column Previous_Scores
+		dataType: int64
+		formatString: 0
+		lineageTag: 3977903b-da0c-4c3e-9f51-6661148c7ace
+		summarizeBy: sum
+		sourceColumn: Previous_Scores
+
+		annotation SummarizationSetBy = Automatic
+
+	column Motivation_Level
+		dataType: string
+		lineageTag: 80819250-3203-448b-a76f-4cd62c9135bf
+		summarizeBy: none
+		sourceColumn: Motivation_Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column Internet_Access
+		dataType: string
+		lineageTag: 4b67d795-749c-4d47-bb74-2eb2d96f1237
+		summarizeBy: none
+		sourceColumn: Internet_Access
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tutoring_Sessions
+		dataType: int64
+		formatString: 0
+		lineageTag: 9206fa5c-1515-4502-9722-67951d9eefd1
+		summarizeBy: sum
+		sourceColumn: Tutoring_Sessions
+
+		annotation SummarizationSetBy = Automatic
+
+	column Family_Income
+		dataType: string
+		lineageTag: 7d7fd3cc-e53d-4bf9-a0b4-6b844f8441ae
+		summarizeBy: none
+		sourceColumn: Family_Income
+
+		annotation SummarizationSetBy = Automatic
+
+	column Teacher_Quality
+		dataType: string
+		lineageTag: a79dee6e-1c12-4ffd-9b91-d95f2abf976d
+		summarizeBy: none
+		sourceColumn: Teacher_Quality
+
+		annotation SummarizationSetBy = Automatic
+
+	column School_Type
+		dataType: string
+		lineageTag: eed59ca1-6059-4dea-8f59-8532d5a24772
+		summarizeBy: none
+		sourceColumn: School_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Peer_Influence
+		dataType: string
+		lineageTag: d5f20bc6-2629-4753-a71e-e481596731f6
+		summarizeBy: none
+		sourceColumn: Peer_Influence
+
+		annotation SummarizationSetBy = Automatic
+
+	column Physical_Activity
+		dataType: int64
+		formatString: 0
+		lineageTag: 38d93bbe-b3b8-45e8-9264-4f074960710b
+		summarizeBy: sum
+		sourceColumn: Physical_Activity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Learning_Disabilities
+		dataType: string
+		lineageTag: 995bb87c-8639-4267-87ca-54b1ccc99d22
+		summarizeBy: none
+		sourceColumn: Learning_Disabilities
+
+		annotation SummarizationSetBy = Automatic
+
+	column Parental_Education_Level
+		dataType: string
+		lineageTag: 9cb0af0c-5e84-4983-9244-d4bb7b6cbe69
+		summarizeBy: none
+		sourceColumn: Parental_Education_Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column Distance_from_Home
+		dataType: string
+		lineageTag: 71ed01ef-8928-4a1e-9e42-cf3aeb2cf6aa
+		summarizeBy: none
+		sourceColumn: Distance_from_Home
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gender
+		dataType: string
+		lineageTag: 48adce21-b002-416b-a740-c2a2d6bb46ec
+		summarizeBy: none
+		sourceColumn: Gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column Exam_Score
+		dataType: int64
+		formatString: 0
+		lineageTag: 14a72261-59a8-4f26-a787-710e4cd65c39
+		summarizeBy: sum
+		sourceColumn: Exam_Score
+
+		annotation SummarizationSetBy = Automatic
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 20e1aea0-e8ec-46b4-8478-b22a4690487b
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Exam_Result = ```
+			SWITCH( TRUE(), 
+			StudentPerformanceFactors[Exam_Score]>= 50 && StudentPerformanceFactors[Exam_Score] <= 60, "Weak",
+			StudentPerformanceFactors[Exam_Score]>= 61 && StudentPerformanceFactors[Exam_Score] <= 75, "Good",
+			StudentPerformanceFactors[Exam_Score]>= 76 && StudentPerformanceFactors[Exam_Score] <= 85, "Very.Good",
+			StudentPerformanceFactors[Exam_Score]>= 86, "EXcellent"
+			)
+			```
+		lineageTag: 89e6237f-83f6-422f-83f2-76e97d82f4b7
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Previos_Exam_Result = ```
+			SWITCH( TRUE(), 
+			StudentPerformanceFactors[Previous_Scores] >= 50 && StudentPerformanceFactors[Previous_Scores] <= 60, "W",
+			StudentPerformanceFactors[Previous_Scores] >= 61 && StudentPerformanceFactors[Previous_Scores] <= 75, "G",
+			StudentPerformanceFactors[Previous_Scores] >= 76 && StudentPerformanceFactors[Previous_Scores] <= 85, "V.G",
+			StudentPerformanceFactors[Previous_Scores] >= 86, "EX"
+			)
+			```
+		lineageTag: cad305bc-78cc-4c3a-806a-a54e8692e35e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Hours_studied G' = ```
+			SWITCH(TRUE(), 
+			StudentPerformanceFactors[Hours_Studied]>= 0 && StudentPerformanceFactors[Hours_Studied] <= 10, "0-10",
+			StudentPerformanceFactors[Hours_Studied]>= 11 && StudentPerformanceFactors[Hours_Studied] <= 20, "11-20",
+			StudentPerformanceFactors[Hours_Studied]>= 21 && StudentPerformanceFactors[Hours_Studied] <= 30, "21-30",
+			StudentPerformanceFactors[Hours_Studied]>= 30, "over 30" )
+			```
+		lineageTag: f891508d-b4fa-4f26-82cd-22ab3837d7b0
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Attendance G' = ```
+			SWITCH( TRUE(), 
+			StudentPerformanceFactors[Attendance] >=60 && StudentPerformanceFactors[Attendance] <= 70, "Low", 
+			StudentPerformanceFactors[Attendance] >=71 && StudentPerformanceFactors[Attendance] <= 80, "Midium", 
+			StudentPerformanceFactors[Attendance] >=80,"High"
+			)
+			```
+		lineageTag: 67a70cef-6131-4c8b-a66a-5d711d9d577c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sleep Hours G' = ```
+			SWITCH(TRUE(), 
+			StudentPerformanceFactors[Sleep_Hours]>= 4 && StudentPerformanceFactors[Sleep_Hours] <= 5, "4-5",
+			StudentPerformanceFactors[Sleep_Hours]>= 6 && StudentPerformanceFactors[Sleep_Hours] <= 8, "6-8",
+			StudentPerformanceFactors[Sleep_Hours]>= 9 && StudentPerformanceFactors[Sleep_Hours] <= 10, "9-10"
+			)
+			```
+		lineageTag: d6e04203-2a7d-45f4-8bd8-20efed31eca3
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition StudentPerformanceFactors = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Abdelrahman\Rwad masr\rwad_masr\wael_gomaa\PBI-20240504T124301Z-001\Projects\StudentPerformanceFactors.xlsx"), null, true),
+				    StudentPerformanceFactors_Sheet = Source{[Item="StudentPerformanceFactors",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(StudentPerformanceFactors_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Hours_Studied", Int64.Type}, {"Attendance", Int64.Type}, {"Parental_Involvement", type text}, {"Access_to_Resources", type text}, {"Extracurricular_Activities", type text}, {"Sleep_Hours", Int64.Type}, {"Previous_Scores", Int64.Type}, {"Motivation_Level", type text}, {"Internet_Access", type text}, {"Tutoring_Sessions", Int64.Type}, {"Family_Income", type text}, {"Teacher_Quality", type text}, {"School_Type", type text}, {"Peer_Influence", type text}, {"Physical_Activity", Int64.Type}, {"Learning_Disabilities", type text}, {"Parental_Education_Level", type text}, {"Distance_from_Home", type text}, {"Gender", type text}, {"Exam_Score", Int64.Type}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Changed Type", "Index", 1, 1, Int64.Type),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Added Index",{"Index", "Hours_Studied", "Attendance", "Parental_Involvement", "Access_to_Resources", "Extracurricular_Activities", "Sleep_Hours", "Previous_Scores", "Motivation_Level", "Internet_Access", "Tutoring_Sessions", "Family_Income", "Teacher_Quality", "School_Type", "Peer_Influence", "Physical_Activity", "Learning_Disabilities", "Parental_Education_Level", "Distance_from_Home", "Gender", "Exam_Score"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Reordered Columns",{{"Index", "ID"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
